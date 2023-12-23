@@ -460,6 +460,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &874812774 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7712045594405534995, guid: abf33c199a947e849af3e96cfd9afad7, type: 3}
+  m_PrefabInstance: {fileID: 6793686079249892145}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &979043758
 GameObject:
   m_ObjectHideFlags: 0
@@ -572,6 +577,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1430269294}
   - component: {fileID: 1430269295}
+  - component: {fileID: 1430269296}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -609,6 +615,24 @@ MonoBehaviour:
   m_TargetShip: {fileID: 216159021}
   m_MobileJoystick: {fileID: 47350235}
   m_ControlMode: 0
+--- !u!114 &1430269296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1430269293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f657b3ddaedfb54a8b97201b7774133, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Camera: {fileID: 519420031}
+  m_Target: {fileID: 874812774}
+  m_InterpolationLinear: 5
+  m_InterpolationAngular: 5
+  m_CameraZOffset: -10
+  m_ForwardOffset: 0
 --- !u!1001 &6793686079249892145
 PrefabInstance:
   m_ObjectHideFlags: 0
