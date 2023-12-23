@@ -614,7 +614,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_TargetShip: {fileID: 216159021}
   m_MobileJoystick: {fileID: 47350235}
-  m_ControlMode: 0
+  m_ControlMode: 1
 --- !u!114 &1430269296
 MonoBehaviour:
   m_ObjectHideFlags: 0
