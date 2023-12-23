@@ -289,6 +289,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_JoyBack: {fileID: 47350233}
   m_Joystick: {fileID: 3771272}
+--- !u!114 &216159021 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7363895430324348663, guid: abf33c199a947e849af3e96cfd9afad7, type: 3}
+  m_PrefabInstance: {fileID: 6793686079249892145}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6859cb3e1bdc5e43b5a356419b4239a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -551,6 +562,53 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1430269293
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1430269294}
+  - component: {fileID: 1430269295}
+  m_Layer: 0
+  m_Name: Player
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1430269294
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1430269293}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1036.1031, y: 476.3401, z: -6.991143}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1430269295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1430269293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 796eeb5d075cb3c45a4e2931f61ee0b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TargetShip: {fileID: 216159021}
+  m_MobileJoystick: {fileID: 47350235}
+  m_ControlMode: 0
 --- !u!1001 &6793686079249892145
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -616,3 +674,4 @@ SceneRoots:
   - {fileID: 6793686079249892145}
   - {fileID: 979043762}
   - {fileID: 840843845}
+  - {fileID: 1430269294}
