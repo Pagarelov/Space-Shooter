@@ -36,7 +36,6 @@ namespace SpaceShooter
 
             m_Joystick.rectTransform.anchoredPosition = new Vector2(Value.x * offsetX, Value.y * offsetY);
 
-            Debug.Log(position);
         }
 
         public void OnPointerDown(PointerEventData eventData)

@@ -31,4 +31,8 @@ public class CameraController : MonoBehaviour
         }
     }
 
+    public void SetTarget(Transform newTarget)
+    {
+        m_Target = newTarget;
+    }
 }

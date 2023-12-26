@@ -414,7 +414,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7363895430324348663, guid: abf33c199a947e849af3e96cfd9afad7, type: 3}
   m_PrefabInstance: {fileID: 6793686079249892145}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 342173565}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f6859cb3e1bdc5e43b5a356419b4239a, type: 3}
@@ -532,25 +532,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Target: {fileID: 519420032}
---- !u!1 &342173565 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7173542060586085568, guid: abf33c199a947e849af3e96cfd9afad7, type: 3}
-  m_PrefabInstance: {fileID: 6793686079249892145}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &342173568
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 342173565}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 569dae5f03e56ad46ba980ef59e4125e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_VelocityDamageModifier: 1
-  m_DamageConstant: 50
 --- !u!1 &385436993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1053,6 +1034,7 @@ GameObject:
   - component: {fileID: 1430269294}
   - component: {fileID: 1430269295}
   - component: {fileID: 1430269296}
+  - component: {fileID: 1430269297}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1108,6 +1090,23 @@ MonoBehaviour:
   m_InterpolationAngular: 5
   m_CameraZOffset: -10
   m_ForwardOffset: 0
+--- !u!114 &1430269297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1430269293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96955025275860741a040732d3264532, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NumLives: 3
+  m_Ship: {fileID: 216159021}
+  m_PlayerShipPrefab: {fileID: 7173542060586085568, guid: abf33c199a947e849af3e96cfd9afad7, type: 3}
+  m_CameraController: {fileID: 1430269296}
+  m_MovementController: {fileID: 1430269295}
 --- !u!1 &1822014765
 GameObject:
   m_ObjectHideFlags: 0
@@ -1199,74 +1198,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1333011351440601738, guid: abf33c199a947e849af3e96cfd9afad7, type: 3}
-      propertyPath: m_Parameters.widthCurve.m_Curve.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1333011351440601738, guid: abf33c199a947e849af3e96cfd9afad7, type: 3}
-      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].time
-      value: 0.37162685
-      objectReference: {fileID: 0}
-    - target: {fileID: 1333011351440601738, guid: abf33c199a947e849af3e96cfd9afad7, type: 3}
-      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[2].time
-      value: 0.47672975
-      objectReference: {fileID: 0}
-    - target: {fileID: 1333011351440601738, guid: abf33c199a947e849af3e96cfd9afad7, type: 3}
-      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[3].time
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1333011351440601738, guid: abf33c199a947e849af3e96cfd9afad7, type: 3}
-      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].value
-      value: 0.13040036
-      objectReference: {fileID: 0}
-    - target: {fileID: 1333011351440601738, guid: abf33c199a947e849af3e96cfd9afad7, type: 3}
-      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[2].value
-      value: 0.48985797
-      objectReference: {fileID: 0}
-    - target: {fileID: 1333011351440601738, guid: abf33c199a947e849af3e96cfd9afad7, type: 3}
-      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[3].value
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1333011351440601738, guid: abf33c199a947e849af3e96cfd9afad7, type: 3}
-      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].inSlope
-      value: -1.1048719
-      objectReference: {fileID: 0}
-    - target: {fileID: 1333011351440601738, guid: abf33c199a947e849af3e96cfd9afad7, type: 3}
-      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[2].inSlope
-      value: -0.058509547
-      objectReference: {fileID: 0}
-    - target: {fileID: 1333011351440601738, guid: abf33c199a947e849af3e96cfd9afad7, type: 3}
-      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[3].inSlope
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1333011351440601738, guid: abf33c199a947e849af3e96cfd9afad7, type: 3}
-      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].outSlope
-      value: -1.1048719
-      objectReference: {fileID: 0}
-    - target: {fileID: 1333011351440601738, guid: abf33c199a947e849af3e96cfd9afad7, type: 3}
-      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[2].outSlope
-      value: -0.058509547
-      objectReference: {fileID: 0}
-    - target: {fileID: 1333011351440601738, guid: abf33c199a947e849af3e96cfd9afad7, type: 3}
-      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[3].inWeight
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1333011351440601738, guid: abf33c199a947e849af3e96cfd9afad7, type: 3}
-      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[3].outSlope
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1333011351440601738, guid: abf33c199a947e849af3e96cfd9afad7, type: 3}
-      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].outWeight
-      value: 0.33333334
-      objectReference: {fileID: 0}
-    - target: {fileID: 1333011351440601738, guid: abf33c199a947e849af3e96cfd9afad7, type: 3}
-      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[2].outWeight
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1333011351440601738, guid: abf33c199a947e849af3e96cfd9afad7, type: 3}
-      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[3].outWeight
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2338280365776785390, guid: abf33c199a947e849af3e96cfd9afad7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1314,10 +1245,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7173542060586085568, guid: abf33c199a947e849af3e96cfd9afad7, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 342173568}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: abf33c199a947e849af3e96cfd9afad7, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
