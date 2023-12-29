@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -60,14 +61,23 @@ namespace SpaceShooter
         /// <summary>
         /// Overrideable object destruction event when hitpoints are below zero.
         /// </summary>
+
+        [SerializeField] private UnityEvent m_EventOnDeath;
+        public UnityEvent EventOnDeath => m_EventOnDeath;
+
         protected virtual void OnDeath()
         {
+            SpawnParticleEffect();
             Destroy(gameObject);
             m_EventOnDeath?.Invoke();
         }
 
-        [SerializeField] private UnityEvent m_EventOnDeath;
-        public UnityEvent EventOnDeath => m_EventOnDeath;
+        [SerializeField] private GameObject particleEffectPrefab;
+        private void SpawnParticleEffect()
+        {
+            GameObject effect = Instantiate(particleEffectPrefab, transform.position, Quaternion.identity);
+            Destroy(effect, 2f);
+        }
     }
 
 }

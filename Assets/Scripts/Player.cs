@@ -1,5 +1,6 @@
+using System.Collections;
 using UnityEngine;
-using UnityEngine.Events;
+
 
 namespace SpaceShooter
 {
@@ -12,6 +13,8 @@ namespace SpaceShooter
         [SerializeField] private CameraController m_CameraController;
         [SerializeField] private MovementController m_MovementController;
 
+        [SerializeField] private float m_Seconds;
+
         private void Start ()
         {
             m_Ship.EventOnDeath.AddListener(OnShipDeath);
@@ -22,17 +25,21 @@ namespace SpaceShooter
             m_NumLives--;
 
             if (m_NumLives > 0) 
-                Respawn();
+                StartCoroutine(Respawn());
         } 
 
-        private void Respawn()
+        private IEnumerator Respawn()
         {
+            yield return new WaitForSeconds(m_Seconds);
+
             var newPlayerShip = Instantiate(m_PlayerShipPrefab);
 
             m_Ship = newPlayerShip.GetComponent<SpaceShip>();
 
             m_CameraController.SetTarget(m_Ship.transform);
             m_MovementController.SetTargetShip(m_Ship);
+
+            m_Ship.EventOnDeath.AddListener(OnShipDeath);
         }
     }
 }

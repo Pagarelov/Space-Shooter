@@ -209,7 +209,7 @@ GameObject:
   - component: {fileID: 4127957947352684203}
   m_Layer: 0
   m_Name: Ship_01
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -277,6 +277,7 @@ MonoBehaviour:
   m_EventOnDeath:
     m_PersistentCalls:
       m_Calls: []
+  particleEffectPrefab: {fileID: 5395695923234900415, guid: 496440acd0e47ae49a3776330f78530c, type: 3}
   m_Mass: 1
   m_Thrust: 1000
   m_Mobility: 2000
@@ -295,7 +296,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_VelocityDamageModifier: 1
-  m_DamageConstant: 50
+  m_DamageConstant: 100
 --- !u!114 &4127957947352684203
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -321,7 +322,7 @@ GameObject:
   - component: {fileID: 1779733360420556597}
   m_Layer: 0
   m_Name: VisualModel
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
