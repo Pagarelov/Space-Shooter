@@ -38,6 +38,8 @@ namespace SpaceShooter
             projectile.transform.position = transform.position;
             projectile.transform.up = transform.up;
 
+            projectile.SetParentShooter(m_Ship);
+
             m_RefireTimer = m_TurretProperties.RateOfFire;
 
             {

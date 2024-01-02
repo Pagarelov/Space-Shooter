@@ -75,8 +75,11 @@ namespace SpaceShooter
         [SerializeField] private GameObject particleEffectPrefab;
         private void SpawnParticleEffect()
         {
-            GameObject effect = Instantiate(particleEffectPrefab, transform.position, Quaternion.identity);
-            Destroy(effect, 2f);
+            if (particleEffectPrefab != null)
+            {
+                GameObject effect = Instantiate(particleEffectPrefab, transform.position, Quaternion.identity);
+                Destroy(effect, 2f);
+            }
         }
     }
 

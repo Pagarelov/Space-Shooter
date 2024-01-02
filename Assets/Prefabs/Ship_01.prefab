@@ -378,7 +378,10 @@ MonoBehaviour:
   m_Mobility: 2000
   m_MaxLinearVelocity: 15
   m_MaxAngularVelocity: 360
-  m_Turrets: []
+  m_Turrets:
+  - {fileID: 5723694042602877382}
+  - {fileID: 2892420744908649253}
+  - {fileID: 1724315738186813307}
 --- !u!114 &8883088298525608251
 MonoBehaviour:
   m_ObjectHideFlags: 0
