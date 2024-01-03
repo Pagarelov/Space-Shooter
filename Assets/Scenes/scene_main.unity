@@ -9967,6 +9967,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ship_01
       objectReference: {fileID: 0}
+    - target: {fileID: 7363895430324348663, guid: abf33c199a947e849af3e96cfd9afad7, type: 3}
+      propertyPath: m_MaxAmmo
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7363895430324348663, guid: abf33c199a947e849af3e96cfd9afad7, type: 3}
+      propertyPath: m_MaxEnergy
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7363895430324348663, guid: abf33c199a947e849af3e96cfd9afad7, type: 3}
+      propertyPath: m_EnergyRegenPerSecond
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

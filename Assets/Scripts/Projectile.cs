@@ -28,7 +28,6 @@ namespace SpaceShooter
                 if (dest != null && dest != m_Parent) 
                 { 
                     dest.ApplyDamage(m_Damage);
-                    Debug.Log(m_Damage);
                 }
 
                 OnProjectileLifeEnd(hit.collider, hit.point);

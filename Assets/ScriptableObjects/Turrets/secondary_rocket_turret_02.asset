@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc83c2c6e09a05544b965c4c06585626, type: 3}
   m_Name: secondary_rocket_turret_02
   m_EditorClassIdentifier: 
-  m_Mode: 0
+  m_Mode: 1
   m_ProjectilePrefab: {fileID: 0}
-  m_RateOfFire: 0
+  m_RateOfFire: 1
   m_EnergyUsage: 0
-  m_AmmoUsage: 0
+  m_AmmoUsage: 1
   m_LaunchSFX: {fileID: 0}
