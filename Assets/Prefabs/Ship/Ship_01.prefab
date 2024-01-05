@@ -239,7 +239,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Mode: 0
-  m_TurretProperties: {fileID: 11400000, guid: a0f9c96281a873a4bbaf935a7f5f4a5e, type: 2}
+  m_TurretProperties: {fileID: 0}
 --- !u!1 &7158795737430984107
 GameObject:
   m_ObjectHideFlags: 0
@@ -285,7 +285,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Mode: 0
-  m_TurretProperties: {fileID: 11400000, guid: a0f9c96281a873a4bbaf935a7f5f4a5e, type: 2}
+  m_TurretProperties: {fileID: 0}
 --- !u!1 &7173542060586085568
 GameObject:
   m_ObjectHideFlags: 0
@@ -382,6 +382,9 @@ MonoBehaviour:
   - {fileID: 5723694042602877382}
   - {fileID: 2892420744908649253}
   - {fileID: 1724315738186813307}
+  m_MaxEnergy: 50
+  m_MaxAmmo: 20
+  m_EnergyRegenPerSecond: 1
 --- !u!114 &8883088298525608251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -394,8 +397,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 569dae5f03e56ad46ba980ef59e4125e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_VelocityDamageModifier: 1
-  m_DamageConstant: 20
+  m_VelocityDamageModifier: 5
+  m_DamageConstant: 5
 --- !u!114 &4127957947352684203
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -573,4 +576,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Mode: 1
-  m_TurretProperties: {fileID: 11400000, guid: af7807d78f381ad4391f7438787c875a, type: 2}
+  m_TurretProperties: {fileID: 0}
