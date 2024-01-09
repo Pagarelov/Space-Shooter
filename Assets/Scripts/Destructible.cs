@@ -68,8 +68,8 @@ namespace SpaceShooter
         protected virtual void OnDeath()
         {
             SpawnParticleEffect();
-            Destroy(gameObject);
             m_EventOnDeath?.Invoke();
+            Destroy(gameObject);
         }
 
         [SerializeField] private GameObject particleEffectPrefab;

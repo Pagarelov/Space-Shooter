@@ -29,38 +29,30 @@ namespace SpaceShooter
             EventOnDeath.AddListener(OnAsteroidDestroyed);
 
             SetSize(size);
-
-            Debug.Log("Awake + " + size);
         }
 
         private void OnDestroy()
         {
             EventOnDeath.RemoveListener(OnAsteroidDestroyed);
-
-            Debug.Log("OnDestroy");
         }
 
         private void OnAsteroidDestroyed()
         {
             if (size != AsteroidSize.Small)
             {
-                Debug.Log("SpawnAsteroid");
                 SpawnAsteroid();
             }
             OnDestroyed.Invoke(this);
-            Debug.Log("Invoke");
             Destroy(gameObject);
-            Debug.Log("Destroy");
         }
 
         private void SpawnAsteroid()
         {
-            Debug.Log("SpawnAsteroid");
             float zOffset = 0.01f;
 
             for (int i = 0; i < 2; i++)
             {
-                Vector3 spawnPosition = transform.position + new Vector3(0, 0, zOffset * i);
+                Vector3 spawnPosition = transform.position + new Vector3(0.2f, 0.2f, zOffset * i);
                 Asteroid asteroid = Instantiate(this, spawnPosition, Quaternion.identity);
                 asteroid.SetSize(size - 1);
             }
@@ -68,7 +60,6 @@ namespace SpaceShooter
 
         public void SetSize(AsteroidSize size)
         {
-            Debug.Log("SetSize");
             if (size < 0) return;
 
             transform.localScale = GetVectorFromSize(size);
@@ -77,7 +68,6 @@ namespace SpaceShooter
 
         public Vector3 GetVectorFromSize(AsteroidSize size)
         {
-            Debug.Log("GetVectorFromSize");
             if (size == AsteroidSize.Huge) return new Vector3(1, 1, 1);
             if (size == AsteroidSize.Big) return new Vector3(0.75f, 0.75f, 0.75f);
             if (size == AsteroidSize.Normal) return new Vector3(0.6f, 0.6f, 0.6f);

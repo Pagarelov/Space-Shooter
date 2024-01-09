@@ -1810,7 +1810,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_TargetShip: {fileID: 1253972123}
   m_MobileJoystick: {fileID: 47350235}
-  m_ControlMode: 1
+  m_ControlMode: 0
   m_MobileFirePrimary: {fileID: 145684339}
   m_MobileFireSecondary: {fileID: 107163038}
 --- !u!114 &1430269296
@@ -1996,7 +1996,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_DebrisPrefabs:
   - {fileID: -7399252099944391352, guid: 77c392a96c8cff44198c3f86e21e9311, type: 3}
-  m_NumDebris: 10
+  m_NumDebris: 90
   m_Area: {fileID: 1592095873}
   m_RandomSpeed: 0.55
 --- !u!114 &1592095873
@@ -2271,6 +2271,10 @@ PrefabInstance:
     - target: {fileID: 7173542060586085568, guid: abf33c199a947e849af3e96cfd9afad7, type: 3}
       propertyPath: m_Name
       value: Ship_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 7363895430324348663, guid: abf33c199a947e849af3e96cfd9afad7, type: 3}
+      propertyPath: m_MaxAmmo
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

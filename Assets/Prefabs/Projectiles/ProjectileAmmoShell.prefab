@@ -203,7 +203,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Velocity: 15
   m_Lifetime: 1000
-  m_Damage: 50
+  m_Damage: 100
   m_InpactEffectPrefab: {fileID: -3711168203793753721}
 --- !u!114 &-3711168203793753721
 MonoBehaviour:
