@@ -1810,7 +1810,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_TargetShip: {fileID: 1253972123}
   m_MobileJoystick: {fileID: 47350235}
-  m_ControlMode: 0
+  m_ControlMode: 1
   m_MobileFirePrimary: {fileID: 145684339}
   m_MobileFireSecondary: {fileID: 107163038}
 --- !u!114 &1430269296
@@ -1995,8 +1995,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_DebrisPrefabs:
-  - {fileID: 1997580859088898917, guid: 77c392a96c8cff44198c3f86e21e9311, type: 3}
-  m_NumDebris: 200
+  - {fileID: -7399252099944391352, guid: 77c392a96c8cff44198c3f86e21e9311, type: 3}
+  m_NumDebris: 10
   m_Area: {fileID: 1592095873}
   m_RandomSpeed: 0.55
 --- !u!114 &1592095873

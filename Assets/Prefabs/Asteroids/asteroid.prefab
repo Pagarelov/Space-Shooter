@@ -129,10 +129,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1698945431124710691}
-  - component: {fileID: 1997580859088898917}
   - component: {fileID: 9080915123930467519}
+  - component: {fileID: -7399252099944391352}
   m_Layer: 0
-  m_Name: asteroid
+  m_Name: Asteroid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -154,25 +154,6 @@ Transform:
   - {fileID: 1471556895705410140}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1997580859088898917
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7348650585339943566}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39201cce191832a47972cb83cbf9e131, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Nickname: 
-  m_Indestructible: 0
-  m_HitPoints: 100
-  m_EventOnDeath:
-    m_PersistentCalls:
-      m_Calls: []
-  particleEffectPrefab: {fileID: 0}
 --- !u!50 &9080915123930467519
 Rigidbody2D:
   serializedVersion: 4
@@ -200,3 +181,25 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-7399252099944391352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7348650585339943566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7854c72f9df7e5c41b5083e00effefa5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Nickname: 
+  m_Indestructible: 0
+  m_HitPoints: 100
+  m_EventOnDeath:
+    m_PersistentCalls:
+      m_Calls: []
+  particleEffectPrefab: {fileID: 0}
+  size: 3
+  spawnUpForce: 1
+  spawnChance: 100
