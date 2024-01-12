@@ -14,7 +14,7 @@ namespace SpaceShooter
         /// <summary>
         /// Player ignores damage.
         /// </summary>
-        [SerializeField] private bool m_Indestructible;
+        [SerializeField] protected bool m_Indestructible;
         public bool IsIndestructible => m_Indestructible;
 
         /// <summary>
@@ -36,6 +36,7 @@ namespace SpaceShooter
         protected virtual void Start()
         {
             m_CurrentHitPoints = m_HitPoints;
+            m_Indestructible = false;
         }
 
         #endregion
@@ -81,6 +82,29 @@ namespace SpaceShooter
                 Destroy(effect, 2f);
             }
         }
+
+        public void ToggleIndestructible(bool value)
+        {
+            m_Indestructible = value;
+        }
+
+        public void ActivateInvincibility(float duration)
+        {
+            if (!m_Indestructible)
+            {
+                m_Indestructible = true;
+
+                StartCoroutine(DeactivateInvincibility(duration));
+            }
+        }
+
+        private IEnumerator DeactivateInvincibility(float duration)
+        {
+            yield return new WaitForSeconds(duration);
+
+            m_Indestructible = false;
+        }
+
     }
 
 }
