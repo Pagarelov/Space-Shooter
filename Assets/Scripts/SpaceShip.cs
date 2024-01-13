@@ -208,7 +208,6 @@ namespace SpaceShooter
         {
             while (m_AccelerationTimer > 0f)
             {
-                Debug.Log(m_AccelerationTimer);
                 yield return new WaitForSeconds(1f);
                 m_AccelerationTimer--;
             }

@@ -8,6 +8,7 @@ namespace SpaceShooter
         [SerializeField] private float m_AccelerationDuration = 10f;
         protected override void OnPickedUp(SpaceShip ship)
         {
+            Debug.Log("PowerUpAcceleration");
             ship.ActivateAcceleration(m_AccelerationMultiplier, m_AccelerationDuration);
         }
     }

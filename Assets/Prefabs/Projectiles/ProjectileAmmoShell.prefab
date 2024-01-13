@@ -204,6 +204,7 @@ MonoBehaviour:
   m_Velocity: 15
   m_Lifetime: 1000
   m_Damage: 100
+  explosionRadius: 3
   m_InpactEffectPrefab: {fileID: -3711168203793753721}
   rotationSpeed: 0.5
 --- !u!114 &-3711168203793753721

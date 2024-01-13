@@ -10,6 +10,8 @@ namespace SpaceShooter
 
         [SerializeField] private int m_Damage;
 
+        [SerializeField] private float explosionRadius;
+
         [SerializeField] private ImpactEffect m_InpactEffectPrefab;
 
         [SerializeField] private float rotationSpeed;
@@ -41,7 +43,7 @@ namespace SpaceShooter
             m_Timer += Time.deltaTime;
 
             if (m_Timer > m_Lifetime)
-                Destroy(gameObject);
+                Explode();
 
             if (hit.collider == null)
             {
@@ -62,6 +64,22 @@ namespace SpaceShooter
 
         private void OnProjectileLifeEnd(Collider2D col, Vector2 pos)
         {
+            Explode();
+        }
+
+        private void Explode()
+        {
+            Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, explosionRadius);
+
+            foreach (Collider2D collider in colliders)
+            {
+                Destructible dest = collider.transform.root.GetComponent<Destructible>();
+                if (dest != null && dest != m_Parent)
+                {
+                    dest.ApplyDamage(m_Damage);
+                }
+            }
+
             Destroy(gameObject);
         }
 
