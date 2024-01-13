@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 namespace SpaceShooter
@@ -36,6 +37,13 @@ namespace SpaceShooter
         /// </summary>
         private Rigidbody2D m_Rigid;
 
+        private bool m_IsAccelerated;
+        private float m_AccelerationMultiplier;
+        private float m_AccelerationDuration;
+        private float m_AccelerationTimer;
+
+        private float m_OriginalThrust;
+
         #region Public API
 
         /// <summary>
@@ -61,6 +69,13 @@ namespace SpaceShooter
 
             m_Rigid.inertia = 1;
 
+            m_IsAccelerated = false;
+            m_AccelerationMultiplier = 1f;
+            m_AccelerationDuration = 0f;
+            m_AccelerationTimer = 0f;
+
+            m_OriginalThrust = m_Thrust;
+
             InitOffensive();
         }
 
@@ -85,6 +100,19 @@ namespace SpaceShooter
             m_Rigid.AddTorque(TorqueControl * m_Mobility * Time.fixedDeltaTime, ForceMode2D.Force);
 
             m_Rigid.AddTorque(-m_Rigid.angularVelocity * (m_Mobility / m_MaxAngularVelocity) * Time.fixedDeltaTime, ForceMode2D.Force);
+
+            if (m_IsAccelerated)
+            {
+                // Apply acceleration multiplier to thrust during acceleration
+                m_Thrust = m_AccelerationMultiplier * m_OriginalThrust;
+                m_Rigid.AddForce(m_Thrust * ThrustControl * transform.up * Time.fixedDeltaTime, ForceMode2D.Force);
+            }
+            else
+            {
+                // Apply normal thrust without acceleration
+                m_Thrust = m_OriginalThrust;
+                m_Rigid.AddForce(m_Thrust * ThrustControl * transform.up * Time.fixedDeltaTime, ForceMode2D.Force);
+            }
         }
 
         [SerializeField] private Turret[] m_Turrets;
@@ -163,6 +191,30 @@ namespace SpaceShooter
             {
                 m_Turrets[i].AssignLoadout(props);
             }
+        }
+
+        public void ActivateAcceleration(float multiplier, float duration)
+        {
+            m_AccelerationMultiplier = multiplier;
+            m_AccelerationDuration = duration;
+            m_AccelerationTimer = duration;
+            m_IsAccelerated = true;
+
+            // Start a coroutine to deactivate acceleration after a certain duration
+            StartCoroutine(DeactivateAcceleration());
+        }
+
+        private IEnumerator DeactivateAcceleration()
+        {
+            while (m_AccelerationTimer > 0f)
+            {
+                Debug.Log(m_AccelerationTimer);
+                yield return new WaitForSeconds(1f);
+                m_AccelerationTimer--;
+            }
+
+            m_IsAccelerated = false;
+            m_Thrust = m_OriginalThrust;
         }
     }
 }

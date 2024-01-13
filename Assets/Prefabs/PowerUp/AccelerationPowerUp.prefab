@@ -26,8 +26,8 @@ Transform:
   m_GameObject: {fileID: 3680065764301932507}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.007, y: 0.057, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1157282798658703946}
@@ -73,12 +73,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a4be45372db355049ae607970e58289d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c69febcca5dc5fb4aaed07a829685e68, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 1
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 10, y: 10}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -94,9 +94,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1157282798658703946}
   - component: {fileID: 1316305953591819069}
-  - component: {fileID: 93133148250276513}
+  - component: {fileID: 7194988086733492710}
   m_Layer: 0
-  m_Name: InvincibilityPowerUp
+  m_Name: AccelerationPowerUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -153,7 +153,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.18
---- !u!114 &93133148250276513
+--- !u!114 &7194988086733492710
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -162,7 +162,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 8662015568940674093}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f25dab5855ee4ac48adedb2e808e5eaa, type: 3}
+  m_Script: {fileID: 11500000, guid: b0803586aca14db4e8a1fb6206d8e3cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_InvincibilityDuration: 30
+  m_AccelerationMultiplier: 3
+  m_AccelerationDuration: 10
