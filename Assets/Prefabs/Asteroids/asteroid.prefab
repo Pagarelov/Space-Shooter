@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 9080915123930467519}
   - component: {fileID: -7399252099944391352}
   m_Layer: 0
-  m_Name: Asteroid
+  m_Name: asteroid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -200,6 +200,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   particleEffectPrefab: {fileID: 0}
+  m_TeamId: 13
   size: 3
   spawnUpForce: 1
   spawnChance: 100

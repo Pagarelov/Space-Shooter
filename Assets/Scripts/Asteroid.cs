@@ -31,7 +31,7 @@ namespace SpaceShooter
             SetSize(size);
         }
 
-        private void OnDestroy()
+        protected override void OnDestroy()
         {
             EventOnDeath.RemoveListener(OnAsteroidDestroyed);
         }

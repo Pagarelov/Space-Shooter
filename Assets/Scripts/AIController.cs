@@ -38,6 +38,10 @@ namespace SpaceShooter
 
         private const float MAX_ANGLE = 45.0f;
 
+        private Timer m_RandomizeDirectionTimer;
+        private Timer m_FireTimer;
+        private Timer m_FindNewTargetTimer;
+
         private void Start()
         {
             m_SpaceShip = GetComponent<SpaceShip>();
@@ -95,26 +99,70 @@ namespace SpaceShooter
 
         private void ActionFindNewAttackTarget()
         {
-            
+            if (m_FindNewTargetTimer.IsFinished == true)
+            {
+                m_SelectedTarget = FindNearestDestructibleTarget();
+
+                m_FindNewTargetTimer.Start(m_ShootDelay);
+            }
         }
 
         private void ActionFire()
         {
-            
+            if(m_SelectedTarget != null)
+            {
+                if(m_FireTimer.IsFinished == true)
+                {
+                    m_SpaceShip.Fire(TurretMode.Primary);
+
+                    m_FireTimer.Start(m_ShootDelay);
+                }
+            }
         }
 
+        private Destructible FindNearestDestructibleTarget()
+        {
+            float maxDist = float.MaxValue;
+
+            Destructible potentialTarget = null;
+
+            foreach (var v in Destructible.AllDestructibles)
+            {
+                if (v == null || v.GetComponent<SpaceShip>() == null) continue;
+
+                if (v.GetComponent<SpaceShip>() == m_SpaceShip) continue;
+
+                if (v.TeamId == Destructible.TeamIdNeutral) continue;
+
+                if(v.TeamId == m_SpaceShip.TeamId) continue;
+
+                float dist = Vector2.Distance(m_SpaceShip.transform.position, v.transform.position);
+
+                if (dist < maxDist)
+                {
+                    maxDist = dist;
+                    potentialTarget = v;
+                }
+            }
+
+            return potentialTarget;
+        }
 
 
         #region Timers
 
         private void InitTimers()
         {
-
+            m_RandomizeDirectionTimer = new Timer(m_RandomSelectMovePointTime);
+            m_FireTimer = new Timer(m_ShootDelay);
+            m_FindNewTargetTimer = new Timer(m_FindNewTargetTime);
         }
 
         private void UpdateTimers()
         {
-
+            m_RandomizeDirectionTimer.RemoveTime(Time.deltaTime);
+            m_FireTimer.RemoveTime(Time.deltaTime);
+            m_FindNewTargetTimer.RemoveTime(Time.deltaTime);
         }
 
         #endregion

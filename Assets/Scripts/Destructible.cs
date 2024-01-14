@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -27,6 +28,22 @@ namespace SpaceShooter
         /// </summary>
         private int m_CurrentHitPoints;
         public int HitPoints => m_CurrentHitPoints;
+
+        [SerializeField] private UnityEvent m_EventOnDeath;
+        public UnityEvent EventOnDeath => m_EventOnDeath;
+
+        [SerializeField] private GameObject particleEffectPrefab;
+
+
+        private static HashSet<Destructible> m_AllDestructibles = null;
+
+        public static IReadOnlyCollection<Destructible> AllDestructibles => m_AllDestructibles;
+
+
+        public const int TeamIdNeutral = 0;
+
+        [SerializeField] private int m_TeamId;
+        public int TeamId => m_TeamId;
 
         #endregion
 
@@ -63,9 +80,6 @@ namespace SpaceShooter
         /// Overrideable object destruction event when hitpoints are below zero.
         /// </summary>
 
-        [SerializeField] private UnityEvent m_EventOnDeath;
-        public UnityEvent EventOnDeath => m_EventOnDeath;
-
         protected virtual void OnDeath()
         {
             SpawnParticleEffect();
@@ -73,7 +87,6 @@ namespace SpaceShooter
             Destroy(gameObject);
         }
 
-        [SerializeField] private GameObject particleEffectPrefab;
         private void SpawnParticleEffect()
         {
             if (particleEffectPrefab != null)
@@ -83,6 +96,7 @@ namespace SpaceShooter
             }
         }
 
+        #region Indestructible
         public void ToggleIndestructible(bool value)
         {
             m_Indestructible = value;
@@ -103,6 +117,19 @@ namespace SpaceShooter
             yield return new WaitForSeconds(duration);
 
             m_Indestructible = false;
+        }
+        #endregion
+
+        protected virtual void OnEnable()
+        {
+            if (m_AllDestructibles == null)
+                m_AllDestructibles = new HashSet<Destructible>();
+            m_AllDestructibles.Add(this);
+        }
+
+        protected virtual void OnDestroy()
+        {
+            m_AllDestructibles.Remove(this);
         }
 
     }

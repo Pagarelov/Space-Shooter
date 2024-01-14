@@ -369,11 +369,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_AIBehaviour: 1
   m_NavigationLinear: 0.35
-  m_NavigationAngular: 1
-  m_RandomSelectMovePointTime: 0
-  m_FindNewTargetTime: 0
-  m_ShootDelay: 0
-  m_EvadeRayLength: 0
+  m_NavigationAngular: 0.5
+  m_RandomSelectMovePointTime: 5
+  m_FindNewTargetTime: 2
+  m_ShootDelay: 2
+  m_EvadeRayLength: 20
 --- !u!114 &7363895430324348663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -393,6 +393,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   particleEffectPrefab: {fileID: 5395695923234900415, guid: 496440acd0e47ae49a3776330f78530c, type: 3}
+  m_TeamId: 2
   m_Mass: 1
   m_Thrust: 500
   m_Mobility: 1000
@@ -402,9 +403,9 @@ MonoBehaviour:
   - {fileID: 5723694042602877382}
   - {fileID: 2892420744908649253}
   - {fileID: 1724315738186813307}
-  m_MaxEnergy: 0
-  m_MaxAmmo: 0
-  m_EnergyRegenPerSecond: 0
+  m_MaxEnergy: 20
+  m_MaxAmmo: 20
+  m_EnergyRegenPerSecond: 1
 --- !u!114 &8883088298525608251
 MonoBehaviour:
   m_ObjectHideFlags: 0

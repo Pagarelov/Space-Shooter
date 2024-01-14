@@ -373,6 +373,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   particleEffectPrefab: {fileID: 5395695923234900415, guid: 496440acd0e47ae49a3776330f78530c, type: 3}
+  m_TeamId: 1
   m_Mass: 1
   m_Thrust: 500
   m_Mobility: 1000
